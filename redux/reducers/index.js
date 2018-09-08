@@ -1,5 +1,11 @@
-export default function reducef(state, action) {
+export default (state, action) => {
     switch(action.type){
+        case 'SET_SUGGESTION_LIST': {
+            return {...state, ...action.payload}
+        }
+        case 'SET_CATEGORY_LIST': {
+            return {...state, ...action.payload}
+        }
         default:
             return state
     }

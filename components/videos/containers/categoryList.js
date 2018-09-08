@@ -30,7 +30,9 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-    return state
+    return {
+        list: state.categoryList
+    }
 }
 
 export default connect(mapStateToProps) (App)
