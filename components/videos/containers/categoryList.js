@@ -4,8 +4,9 @@ import Empty from './../components/empty'
 import Separator from './../../sections/components/horizontalSeparator'
 import Suggestion from './../components/category'
 import Layout from './../components/categoryListLayout'
+import {connect} from 'react-redux'
 
-export default class extends Component {
+class App extends Component {
 
     renderEmpty = () => <Empty text="No hay sugerencias :("/>
     itemSeparator = () => <Separator color="red" />
@@ -27,3 +28,9 @@ export default class extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return state
+}
+
+export default connect(mapStateToProps) (App)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Video, ScreenOrientation, Constants } from 'expo'
+import { ScreenOrientation, Constants } from 'expo'
 import { StyleSheet } from 'react-native'
 import Layout from './../components/videoLayout'
 import VideoPlayer from '@expo/videoplayer';
