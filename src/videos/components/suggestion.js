@@ -1,20 +1,22 @@
 import React from 'react'
-import {Text, View, Image, StyleSheet} from 'react-native'
+import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default (props) => (
-    <View style={style.container}>
-        <View style={style.left}>
-            <Image style={style.cover} source={{uri: props.medium_cover_image}} />
-            <View style={style.genre}>
-                <Text style={style.genreText}>{props.genres[0]}</Text>
+    <TouchableOpacity onPress={props.onPress} >
+        <View style={style.container}>
+            <View style={style.left}>
+                <Image style={style.cover} source={{ uri: props.medium_cover_image }} />
+                <View style={style.genre}>
+                    <Text style={style.genreText}>{props.genres[0]}</Text>
+                </View>
+            </View>
+            <View style={style.right}>
+                <Text style={style.title}>{props.title}</Text>
+                <Text style={style.year}>{props.year}</Text>
+                <Text style={style.rating}>{props.rating}</Text>
             </View>
         </View>
-        <View style={style.right}>
-            <Text style={style.title}>{props.title}</Text>
-            <Text style={style.year}>{props.year}</Text>
-            <Text style={style.rating}>{props.rating}</Text>
-        </View>
-    </View>
+    </TouchableOpacity>
 )
 
 const style = StyleSheet.create({
@@ -25,7 +27,7 @@ const style = StyleSheet.create({
         height: 150,
         width: 100,
         resizeMode: 'contain'
-    }, 
+    },
     right: {
         paddingLeft: 10,
         justifyContent: 'space-between'

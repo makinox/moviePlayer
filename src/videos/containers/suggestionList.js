@@ -4,14 +4,23 @@ import Layout from './../components/suggestionListLayout'
 import Empty from './../components/empty'
 import Separator from './../../sections/components/verticalSeparator'
 import Suggestion from './../components/suggestion'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 class App extends Component {
 
     renderEmpty = () => <Empty text="No hay sugerencias :(" />
     itemSeparator = () => <Separator color="red" />
-    renderItem = ({ item }) => <Suggestion {...item} />
+    viewMovie = (item) => {
+        this.props.dispatch({
+            type: 'SET_SELECTED_MOVIE',
+            payload: {
+                movie: item
+            }
+        })
+    }
+    renderItem = ({ item }) => <Suggestion onPress={() => this.viewMovie(item)} {...item} />
     keyExtractor = (item) => item.id.toString()
+    onPress
 
     render() {
         return (
@@ -34,4 +43,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps) (App)
+export default connect(mapStateToProps)(App)
