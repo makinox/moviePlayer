@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Text } from 'react-native';
 import { connect } from 'react-redux'
 
 import Home from './screens/containers/home'
@@ -7,6 +6,7 @@ import Header from './sections/components/header'
 import SuggestionList from './videos/containers/suggestionList'
 import CategoryList from './videos/containers/categoryList'
 import Movie from './screens/containers/movie'
+import Search from './sections/containers/search'
 
 import API from './../utils/api'
 
@@ -39,7 +39,7 @@ class App extends Component {
     return (
       <Home>
         <Header />
-        <Text>Buscador</Text>
+        <Search />
         <CategoryList />
         <SuggestionList />
       </Home>
