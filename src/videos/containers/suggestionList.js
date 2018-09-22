@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 class App extends Component {
 
     renderEmpty = () => <Empty text="No hay sugerencias :(" />
-    itemSeparator = () => <Separator color="red" />
+    itemSeparator = () => <Separator color="#eaeaea" />
     viewMovie = (item) => {
         this.props.dispatch({
             type: 'SET_SELECTED_MOVIE',
